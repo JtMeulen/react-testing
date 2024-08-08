@@ -6,7 +6,7 @@ This project is a React application set up with Vite, created to try out RTL and
 
 To get started with this project, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/react-testing.git`
+1. Clone the repository: `git clone https://github.com/JtMeulen/react-testing.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 
@@ -14,8 +14,10 @@ To get started with this project, follow these steps:
 
 This project uses RTL (React Testing Library) and Jest for testing. To run the tests, use the following command:
 
-```
+```bash
 npm run test
+# or for a single file
+npm run test my-file.test.txs
 ```
 
 For TDD (Test-Driven Development), use the following command:

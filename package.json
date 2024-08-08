@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watchAll",
+    "test:watch": "jest --watch -o",
     "test:coverage": "npm test --coverage --watchAll --collectCoverageFrom='src/components/**/*.{ts,tsx}'",
     "dev": "vite",
     "build": "tsc -b && vite build",
