@@ -9,7 +9,7 @@ describe("Greet", () => {
   // Instead of using the test() function, we can use the it() function to write the test.
   test("renders correctly", () => {
     render(<Greet />);
-    const textElement = screen.getByText("Hello");
+    const textElement = screen.getByText("Hello Guest");
     expect(textElement).toBeInTheDocument();
   });
   
