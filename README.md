@@ -18,8 +18,14 @@ This project uses RTL (React Testing Library) and Jest for testing. To run the t
 npm run test
 ```
 
+For TDD (Test-Driven Development), use the following command:
+
+```
+npm run test:watch
+```
+
 To check the test coverage, use the following command:
 
 ```
-npm run coverage
+npm run test:coverage
 ```
