@@ -5,14 +5,17 @@
 import { render, screen } from "@testing-library/react";
 import { Greet } from "./greet";
 
-test("greet renders correctly", () => {
-  render(<Greet />);
-  const textElement = screen.getByText("Hello");
-  expect(textElement).toBeInTheDocument();
-});
-
-test("greet renders with a name", () => {
-  render(<Greet name="Joe" />);
-  const textElement = screen.getByText("Hello Joe");
-  expect(textElement).toBeInTheDocument();
+describe("Greet", () => {
+  // Instead of using the test() function, we can use the it() function to write the test.
+  test("renders correctly", () => {
+    render(<Greet />);
+    const textElement = screen.getByText("Hello");
+    expect(textElement).toBeInTheDocument();
+  });
+  
+  test("renders with a name", () => {
+    render(<Greet name="Joe" />);
+    const textElement = screen.getByText("Hello Joe");
+    expect(textElement).toBeInTheDocument();
+  });
 });
