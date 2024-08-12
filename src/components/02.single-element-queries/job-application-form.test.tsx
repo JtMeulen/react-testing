@@ -64,6 +64,21 @@ describe("JobApplicationForm", () => {
     const pageHeadingEl = screen.getByText("Job Application Form");
     expect(pageHeadingEl).toBeInTheDocument();
 
+    // ! Alternatively, we can have substring matching
+    const pageHeadingEl2 = screen.getByText("job app", { exact: false });
+    expect(pageHeadingEl2).toBeInTheDocument();
+
+    // ! Or use regex (also case-insensitive or substring matching)
+    const pageHeadingEl3 = screen.getByText(/job app/i);
+    expect(pageHeadingEl3).toBeInTheDocument();
+
+    // ! And it even accepts a function that should return a boolean
+    const pageHeadingEl4 = screen.getByText(
+      (content, element) =>
+        content.startsWith("Job App") && element?.tagName.toLowerCase() === "h1"
+    );
+    expect(pageHeadingEl4).toBeInTheDocument();
+
     const sectionHeadingEl = screen.getByText("Section 1", { selector: "h2" }); // Possible to pass options for more specificity
     expect(sectionHeadingEl).toBeInTheDocument();
 
