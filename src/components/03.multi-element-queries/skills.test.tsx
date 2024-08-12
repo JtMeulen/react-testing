@@ -20,7 +20,7 @@ describe("Skills", () => {
   const skills = ["React", "TypeScript", "Jest"];
 
   it("renders correctly", () => {
-    render(<Skills skills={skills} />);
+    render(<Skills />);
 
     const listEl = screen.getByRole("list");
     expect(listEl).toBeInTheDocument();
