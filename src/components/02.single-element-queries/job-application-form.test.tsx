@@ -3,6 +3,7 @@ import { JobApplicationForm } from "./job-application-form";
 
 describe("JobApplicationForm", () => {
   // Primary form of making element queries
+  // List of all roles: https://www.w3.org/TR/html-aria/#docconformance
   it("renders correctly using getByRole", () => {
     render(<JobApplicationForm />);
 
