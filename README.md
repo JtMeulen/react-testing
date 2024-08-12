@@ -2,6 +2,8 @@
 
 This project is a React application set up with Vite, created to try out RTL and Jest testing for exercises and examples. 
 
+For the setup of RTL and Jest with Vite, I followed [this guide](https://dev.to/teyim/effortless-testing-setup-for-react-with-vite-typescript-jest-and-react-testing-library-1c48).
+
 ## Getting Started
 
 To get started with this project, follow these steps:
