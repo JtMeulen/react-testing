@@ -1,28 +1,27 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { AppProviders } from './providers/AppProviders'
+import { Greet } from './components/01.basic-component/greet'
+
 import './App.css'
+import { JobApplicationForm } from './components/02.single-element-queries/job-application-form'
+import { Skills } from './components/03.multi-element-queries/skills'
+import { Navbar } from './components/04.not-rendered-element-queries/navbar'
+import { Content } from './components/05.dynamic-delayed-element-queries/content'
+import { Footer } from './components/06.debugging/footer'
+import { Counter } from './components/07.user-interactions-mouse/counter'
+import { Input } from '@mui/material'
 
 function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <AppProviders>
+      <Greet />
+      <JobApplicationForm />
+      <Skills skills={['React', 'TypeScript', 'Jest']} />
+      <Navbar />
+      <Content />
+      <Footer />
+      <Counter />
+      <Input />
+    </AppProviders>
   )
 }
 
