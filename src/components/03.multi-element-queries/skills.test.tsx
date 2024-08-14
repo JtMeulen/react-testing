@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 
-import { Skills } from "./skills";
+import { Skills } from './skills';
 
 /**
  * Here we are using the getAllByRole query to get all the list items in the Skills component.
@@ -16,27 +16,27 @@ import { Skills } from "./skills";
  * getAllByTitle
  * getAllByTestId
  */
-describe("Skills", () => {
-  const skills = ["React", "TypeScript", "Jest"];
+describe('Skills', () => {
+  const skills = ['React', 'TypeScript', 'Jest'];
 
-  it("renders correctly", () => {
+  it('renders correctly', () => {
     render(<Skills />);
 
-    const listEl = screen.getByRole("list");
+    const listEl = screen.getByRole('list');
     expect(listEl).toBeInTheDocument();
   });
 
-  it("render a list of skills", () => {
+  it('render a list of skills', () => {
     render(<Skills skills={skills} />);
 
-    const listItemEls = screen.getAllByRole("listitem");
+    const listItemEls = screen.getAllByRole('listitem');
     expect(listItemEls).toHaveLength(skills.length);
   });
 
-  it("render a list of skills with correct text", () => {
+  it('render a list of skills with correct text', () => {
     render(<Skills skills={skills} />);
 
-    const listItemEls = screen.getAllByRole("listitem");
+    const listItemEls = screen.getAllByRole('listitem');
 
     listItemEls.forEach((listItemEl, index) => {
       expect(listItemEl).toHaveTextContent(skills[index]);

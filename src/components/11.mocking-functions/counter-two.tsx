@@ -1,6 +1,10 @@
-import { CounterTwoProps } from "./counter-two.types";
+import { CounterTwoProps } from './counter-two.types';
 
-export const CounterTwo = ({ count, handleIncrement, handleDecrement }: CounterTwoProps) => {
+export const CounterTwo = ({
+  count,
+  handleIncrement,
+  handleDecrement,
+}: CounterTwoProps) => {
   return (
     <div>
       <h1>Counter Two</h1>

@@ -1,6 +1,6 @@
-import { render, screen, logDOM, logRoles } from "@testing-library/react";
+import { render, screen, logDOM, logRoles } from '@testing-library/react';
 
-import { Footer } from "./footer";
+import { Footer } from './footer';
 
 /**
  * Debugging test can be done by logging the output of the rendered component.
@@ -11,20 +11,20 @@ import { Footer } from "./footer";
  *
  * Remove the .skip from the test to run it (we dont want to see this every time)
  */
-describe.skip("Footer", () => {
-  it("renders correctly", () => {
+describe.skip('Footer', () => {
+  it('renders correctly', () => {
     render(<Footer />);
 
-    const footerEl = screen.getByRole("contentinfo");
+    const footerEl = screen.getByRole('contentinfo');
     expect(footerEl).toBeInTheDocument();
   });
 
   // We will show the debug output of the screen object before and after useEffect is triggered to show the difference
-  it("shows debug output using screen.debug()", async () => {
+  it('shows debug output using screen.debug()', async () => {
     render(<Footer />);
 
     screen.debug();
-    const linkEl = await screen.findByRole("link");
+    const linkEl = await screen.findByRole('link');
     expect(linkEl).toBeInTheDocument();
     screen.debug();
   });
@@ -32,13 +32,13 @@ describe.skip("Footer", () => {
   // To log the roles of the rendered component, we can use the logRoles function from RTL
   // We can also log the complete DOM using logDOM.
   // We need to store the return value of the render method to do so
-  it("shows debug output using logDOM and logRoles", async () => {
+  it('shows debug output using logDOM and logRoles', async () => {
     const view = render(<Footer />);
 
     logDOM(view.container);
     logRoles(view.container);
 
-    const linkEl = await screen.findByRole("link");
+    const linkEl = await screen.findByRole('link');
     expect(linkEl).toBeInTheDocument();
 
     logDOM(view.container);

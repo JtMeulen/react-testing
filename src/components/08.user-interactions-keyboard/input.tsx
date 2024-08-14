@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const Input = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   return (
     <main>
@@ -14,7 +14,7 @@ export const Input = () => {
         onChange={(e) => setValue(e.target.value)}
       />
       <p>Lastname: {value}</p>
-      <button onClick={() => setValue("")}>Clear</button>
+      <button onClick={() => setValue('')}>Clear</button>
     </main>
   );
 };

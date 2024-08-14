@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 
-import { Users } from "./users";
+import { Users } from './users';
 
 /**
  * Here we are mocking the global fetch method as it is only available in the browser.
@@ -20,38 +20,40 @@ const mockFetch = (response: unknown, success: boolean = true) => {
     Promise.resolve({
       json: async () =>
         success ? Promise.resolve(response) : Promise.reject(),
-    })
+    }),
   ) as jest.Mock;
 };
 
-describe("Users", () => {
+describe('Users', () => {
   afterEach(() => {
     jest.resetAllMocks();
   });
 
-  it("renders correctly", async () => {
-    mockFetch([{ name: "John Doe" },
-      { name: "Bruce Wayne" },
-      { name: "Clark Kent" },]);
+  it('renders correctly', async () => {
+    mockFetch([
+      { name: 'John Doe' },
+      { name: 'Bruce Wayne' },
+      { name: 'Clark Kent' },
+    ]);
 
     render(<Users />);
 
-    const usersHeadingEl = await screen.findByRole("heading", { level: 1 });
+    const usersHeadingEl = await screen.findByRole('heading', { level: 1 });
     expect(usersHeadingEl).toBeInTheDocument();
   });
 
-  it("renders the data after fetching", async () => {
+  it('renders the data after fetching', async () => {
     const mockData = [
-      { name: "John Doe" },
-      { name: "Bruce Wayne" },
-      { name: "Clark Kent" },
+      { name: 'John Doe' },
+      { name: 'Bruce Wayne' },
+      { name: 'Clark Kent' },
     ];
 
     mockFetch(mockData);
 
     render(<Users />);
 
-    const listitemsEl = await screen.findAllByRole("listitem");
+    const listitemsEl = await screen.findAllByRole('listitem');
     expect(listitemsEl).toHaveLength(mockData.length);
 
     listitemsEl.forEach((item, index) => {
@@ -59,12 +61,12 @@ describe("Users", () => {
     });
   });
 
-  it("renders error message when the fetch fails", async () => {
+  it('renders error message when the fetch fails', async () => {
     mockFetch(null, false);
 
     render(<Users />);
 
-    const errorMessage = await screen.findByText("Error fetching users");
+    const errorMessage = await screen.findByText('Error fetching users');
     expect(errorMessage).toBeInTheDocument();
   });
 });

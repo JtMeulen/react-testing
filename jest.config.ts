@@ -1,24 +1,24 @@
 export default {
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    '^.+\\.tsx?$': 'ts-jest',
   },
 
   moduleNameMapper: {
-    "\\.(css|less|sass|scss)$": "identity-obj-proxy",
-    "^.+\\.svg$": "jest-transformer-svg",
-    "^@/(.*)$": "/src/$1",
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '^.+\\.svg$': 'jest-transformer-svg',
+    '^@/(.*)$': '/src/$1',
   },
 
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 
   // Coverage settings
   collectCoverageFrom: [
-    "src/**/*.{ts,tsx}",
+    'src/**/*.{ts,tsx}',
 
     // Exclude files
-    "!src/main.tsx",
-    "!src/**/*.{d,types}.{ts,tsx}",
+    '!src/main.tsx',
+    '!src/**/*.{d,types}.{ts,tsx}',
   ],
   coverageThreshold: {
     global: {
